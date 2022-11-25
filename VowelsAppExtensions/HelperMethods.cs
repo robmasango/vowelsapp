@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace VowelsAppExtensions
 {
@@ -8,62 +9,89 @@ namespace VowelsAppExtensions
     {
         public List<char> Checkduplicates(string inputString)
         {
-            inputString = RemoveWhitespace(inputString);
-            var duplicates = new List<char>();
-            foreach (var item in inputString)
+            try
             {
-                if (inputString.IndexOf(item) != inputString.LastIndexOf(item) &&
-                    !duplicates.Contains(item))
+                inputString = RemoveWhitespace(inputString);
+                var duplicates = new List<char>();
+                foreach (var item in inputString)
                 {
-                    duplicates.Add(item);
+                    if (inputString.IndexOf(item) != inputString.LastIndexOf(item) &&
+                        !duplicates.Contains(item))
+                    {
+                        duplicates.Add(item);
+                    }
                 }
-            }
 
-            return duplicates;
+                return duplicates;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public Tuple<int, int> CountUniqueVowelsAndNonVowel(string inputString)
         {
-            inputString = RemoveWhitespace(inputString);
-            inputString = inputString.ToLower();
-            inputString = new string(inputString.Distinct().ToArray());
-            int i, len, vowel, nonvowel;
+            try
+            {
+                inputString = RemoveWhitespace(inputString);
+                inputString = inputString.ToLower();
+                inputString = new string(inputString.Distinct().ToArray());
+                int i, len, vowel, nonvowel;
 
-            vowel = 0;
-            nonvowel = 0;
-            len = inputString.Length;
-
-            for (i = 0; i < len; i++)
+                vowel = 0;
+                nonvowel = 0;
+                len = inputString.Length;
 
                 for (i = 0; i < len; i++)
-                {
-                    if (inputString[i] == 'a' || inputString[i] == 'e' || inputString[i] == 'i' || inputString[i] == 'o' || inputString[i] == 'u')
-                    {
-                        vowel++;
-                    }
-                    else
-                    {
-                        nonvowel++;
-                    }
-                }
 
-            return new Tuple<int, int>(vowel, nonvowel); ;
+                    for (i = 0; i < len; i++)
+                    {
+                        if (inputString[i] == 'a' || inputString[i] == 'e' || inputString[i] == 'i' || inputString[i] == 'o' || inputString[i] == 'u')
+                        {
+                            vowel++;
+                        }
+                        else
+                        {
+                            nonvowel++;
+                        }
+                    }
 
+                return new Tuple<int, int>(vowel, nonvowel); ;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public int GetUniqueVowels(string inputString)
         {
-            int vowels = CountUniqueVowelsAndNonVowel(inputString).Item1;
-            return vowels;
+            try
+            {
+                int vowels = CountUniqueVowelsAndNonVowel(inputString).Item1;
+                return vowels;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
 
         public string RemoveWhitespace(string input)
         {
-            string inputString = new string(input.ToCharArray()
-                .Where(c => !char.IsWhiteSpace(c))
-                .ToArray());
-            return inputString.ToLower();
+            try
+            {
+                string inputString = new string(input.ToCharArray()
+                                    .Where(c => !char.IsWhiteSpace(c))
+                                    .ToArray());    
+                return inputString.ToLower();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }
