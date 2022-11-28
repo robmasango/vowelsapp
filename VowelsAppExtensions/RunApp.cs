@@ -64,7 +64,7 @@ namespace VowelsAppExtensions
             }
             catch (Exception ex)
             {
-                throw ex;
+                Console.WriteLine("There was an error with your process: " + ex);
             }
         }
 
@@ -85,7 +85,7 @@ namespace VowelsAppExtensions
             }
             catch (Exception ex)
             {
-                throw ex;
+                Console.WriteLine("There was an error with your process: " + ex);
             }
         }
 
@@ -112,7 +112,7 @@ namespace VowelsAppExtensions
             }
             catch (Exception ex)
             {
-                throw ex;
+                Console.WriteLine("There was an error with your process: " + ex);
             }
         }
     }

@@ -13,9 +13,11 @@ namespace VowelsAppUnitTests
         [Fact]
         public void Ensure_when_1_is_pressed_runs_correct_method()
         {
+            //arrange
             string operation = "1";
             string str = "I like eating apples";
 
+            //Act
             var record = runApp.ExecuteApplication(operation, str);
 
             bool result;
@@ -28,15 +30,18 @@ namespace VowelsAppUnitTests
                 result = false;
             }
 
+            //Assert
             Assert.True(result, "1 should execute Checkduplicates method");
         }
 
         [Fact]
         public void Ensure_when_1_is_not_pressed_runs_incorrect_method()
         {
+            //Arrange
             string operation = "5";
             string str = "I like eating apples";
 
+            //Act
             var record = runApp.ExecuteApplication(operation, str);
 
             bool result;
@@ -49,6 +54,7 @@ namespace VowelsAppUnitTests
                 result = false;
             }
 
+            //Assert
             Assert.False(result, "1 was not pressed incorrect or no method executed");
         }
 
@@ -58,9 +64,11 @@ namespace VowelsAppUnitTests
         [Fact]
         public void Ensure_when_2_is_pressed_runs_correct_method()
         {
+            //Arrange
             string operation = "2";
             string str = "I like eating apples";
 
+            //Act
             var record = runApp.ExecuteApplication(operation, str);
 
             bool result;
@@ -73,15 +81,18 @@ namespace VowelsAppUnitTests
                 result = false;
             }
 
+            //Assert
             Assert.True(result, "2 should execute GetUniqueVowels method");
         }
 
         [Fact]
         public void Ensure_when_2_is_not_pressed_runs_incorrect_method()
         {
+            //Arrange
             string operation = "5";
             string str = "I like eating apples";
 
+            //Act
             var record = runApp.ExecuteApplication(operation, str);
 
             bool result;
@@ -94,15 +105,18 @@ namespace VowelsAppUnitTests
                 result = false;
             }
 
+            //Assert
             Assert.False(result, "2 was not pressed incorrect or no method executed");
         }
 
         [Fact]
         public void Ensure_when_3_is_pressed_runs_correct_method()
         {
+            //Arrange
             string operation = "3";
             string str = "I like eating apples";
 
+            //Act
             var record = runApp.ExecuteApplication(operation, str);
 
             bool result;
@@ -115,15 +129,18 @@ namespace VowelsAppUnitTests
                 result = false;
             }
 
+            //Assert
             Assert.True(result, "3 should execute UniqueVowelsAndNonVowels method");
         }
 
         [Fact]
         public void Ensure_when_3_is_not_pressed_runs_incorrect_method()
         {
+            //Arrange
             string operation = "5";
             string str = "I like eating apples";
 
+            //Act
             var record = runApp.ExecuteApplication(operation, str);
 
             bool result;
@@ -136,6 +153,7 @@ namespace VowelsAppUnitTests
                 result = false;
             }
 
+            //Assert
             Assert.False(result, "3 was not pressed incorrect or no method executed");
         }
 
