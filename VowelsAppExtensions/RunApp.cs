@@ -7,7 +7,6 @@ namespace VowelsAppExtensions
     public class RunApp
     {
         private readonly HelperMethods helpers = new HelperMethods();
-        internal readonly int result;
         public int ExecuteApplication(string operations, string inputString)
         {
             try
